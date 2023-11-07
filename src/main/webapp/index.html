@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlcoholSoft</title>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <p>AlcoholSoft</p>
+    </header>
+
+    <div class="swiffy-slider slider-item-ratio slider-item-ratio-32x9 slider-nav-chevron slider-nav-autoplay slider-nav-animation slider-nav-animation-fadein"
+        id="carousel1" data-slider-nav-autoplay-interval="4000">
+        <ul class="slider-container" id="contenedor">
+            <li class="slide-visible">
+                <div id="slide1"><img class="imgCar" src="images/carrusel1-1.jpg" style="max-width: auto;height: auto;">
+                </div>
+            </li>
+            <li class="">
+                <div id="slide2"><img class="imgCar" src="images/carrusel1-2.jpg" style="max-width: 100%;height: auto;">
+                </div>
+            </li>
+            <li class="">
+                <div id="slide3"><img class="imgCar" src="images/carrusel1-3.png" style="max-width: 100%;height: auto;">
+                </div>
+            </li>
+            <li class="">
+                <div id="slide4"><img class="imgCar" src="images/carrusel1-4.png" style="max-width: 100%;height: auto;">
+                </div>
+            </li>
+            <li class="">
+                <div id="slide5"><img class="imgCar" src="images/carrusel1-5.jpeg"
+                        style="max-width: 100%;height: auto;"></div>
+            </li>
+        </ul>
+
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+
+        <ul class="slider-indicators">
+            <li class="active"></li>
+            <li class=""></li>
+            <li class=""></li>
+            <li class=""></li>
+            <li class=""></li>
+        </ul>
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="carS">
+            <img src="images/carrito-de-compras.png" alt="" id="carri" onclick="showCarrito()"><sup
+                id="cantCarrito"></sup>
+        </div>
+    </nav>
+
+    <main>
+
+        <aside>
+            <ul>
+                <h3>Generos</h3>
+                <li onclick="todosCard()"><span>Todos</span><span id="tod"></span></li>
+                <li onclick="accionCard('Acción')"><span>Acción</span><span id="acc"></span></li>
+                <li onclick="accionCard('Aventuras')"><span>Aventuras</span><span id="aven"></span></li>
+                <li onclick="accionCard('Horror')"><span>Horror</span><span id="horr"></span></li>
+                <li onclick="accionCard('Lucha')"><span>Lucha</span><span id="lu"></span></li>
+                <li onclick="accionCard('Multijugador')"><span>Multijugador</span><span id="mul"></span></li>
+                <li onclick="accionCard('Plataformas')"><span>Plataformas</span><span id="pla"></span></li>
+                <li onclick="accionCard('RPG')"><span>RPG</span><span id="rpg"></span></li>
+            </ul>
+
+            <!-- <div class="swiffy-slider slider-nav-chevron slider-nav-autoplay slider-nav-animation slider-nav-animation-fadein"
+                id="carousel2" data-slider-nav-autoplay-interval="4000">
+                <ul class="slider-container">
+                    <li class="slide-visible">
+                        <div id="slide1"><img src="images/carrusel2-1.jpeg" style="max-width: 100%;height: auto;">
+                        </div>
+                    </li>
+                    <li class="">
+                        <div id="slide2"><img src="images/carrusel2-2.png" style="max-width: 100%;height: auto;">
+                        </div>
+                    </li>
+
+                    <li class="">
+                        <div id="slide3"><img src="images/carrusel2-3.png" style="max-width: 100%;height: auto;">
+                        </div>
+                    </li>
+
+                </ul>
+
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button class=""></button>
+                    <button class=""></button>
+                </div>
+            </div> -->
+
+            <div class="swiffy-slider slider-nav-chevron slider-nav-autoplay slider-nav-animation slider-nav-animation-fadein" data-slider-nav-autoplay-interval="4000" id="carousel2">
+                <ul class="slider-container">
+                    <li class="slide-visible">
+                        <div id="slide1"><img src="images/carrusel2-1.jpeg" style="max-width: 100%;height: auto;"></div>
+                    </li>
+                    <li class="">
+                        <div id="slide2"><img src="images/carrusel2-2.png" style="max-width: 100%;height: auto;"></div>
+                    </li>
+                    <li class="">
+                        <div id="slide3"><img src="images/carrusel2-3.png" style="max-width: 100%;height: auto;"></div>
+                    </li>
+
+                    </li>
+                </ul>
+            
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+            
+                <ul class="slider-indicators">
+                    <li class="active"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <section>
+            <div class="cards" id="cards">
+                <!-- <div class="card">
+                    <img id="imagen" src="images/alan.jpg" alt="">
+                    <div class="ti">
+                        <p id="titulo">alan wake 2</p>
+                    </div>             
+                    <hr>
+                    <div class="inferior">
+                        <p id="precio">$20.000</p>
+                        <img src="images/anadir-al-carrito (1).png" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <div class="carrito" id="carrito">
+        <span class="material-symbols-outlined" id="close" onclick="cerrarCarrito()">
+            close
+        </span>
+        <p>Carrito de compras</p>
+        <div class="cardsCa" id="cardsCa">
+
+        </div>
+        <div class="total">
+            <div class="precio">
+                <p>Total a pagar: </p>
+                <span id="total"></span>
+            </div>
+            <button type="button" id="boton">Comprar</button>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h2 class="brand">AlcoholSoft</h2>
+                <p>Somos expertos en la venta de juegos</p>
+            </div>
+            <div class="social-media">
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        inicioCarr()
+        showCard()
+        showCant('Todos', 'tod')
+        showCant('Acción', 'acc')
+        showCant('Aventuras', 'aven')
+        showCant('Horror', 'horr')
+        showCant('Lucha', 'lu')
+        showCant('Multijugador', 'mul')
+        showCant('Plataformas', 'pla')
+        showCant('RPG', 'rpg')
+    </script>
+</body>
+
+</html>
