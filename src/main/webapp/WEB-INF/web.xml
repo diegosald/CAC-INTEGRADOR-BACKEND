@@ -49,4 +49,24 @@
     <servlet-name>ListaJuegosJson</servlet-name>
     <url-pattern>/ListaJuegosJson</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginUser</display-name>
+    <servlet-name>LoginUser</servlet-name>
+    <servlet-class>ar.cac.abm.servlet.LoginUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginUser</servlet-name>
+    <url-pattern>/LoginUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterUser</display-name>
+    <servlet-name>RegisterUser</servlet-name>
+    <servlet-class>ar.cac.abm.servlet.RegisterUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterUser</servlet-name>
+    <url-pattern>/RegisterUser</url-pattern>
+  </servlet-mapping>
 </web-app>

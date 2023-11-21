@@ -50,7 +50,7 @@ con = new Conexion("prueba","12345","ventajuegos") ;
 					<td><%=a.getTitulo() %></td>
 					<td><%=a.getGenero() %></td>
 					<td><%=a.getPrecio()%></td>
-					<td><img src="images/<%=a.getImgurl()%>" alt="<%=a.getImgurl()%>" style="height: 100px"></td>
+					<td><img src="images-upload/<%=a.getImgurl()%>" alt="<%=a.getImgurl()%>" style="height: 100px"></td>
 					<td><a id="btn-eliminar" href="DelJuego?id=<%=a.getId() %>"
 						class="btn btn-danger">ELIMINAR</a> <a
 						href="juegos.jsp?id=<%=a.getId() %>&titulo=<%=a.getTitulo() %>&genero=<%=a.getGenero() %>&precio=<%=a.getPrecio()%> "

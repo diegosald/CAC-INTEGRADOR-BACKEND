@@ -1,4 +1,4 @@
-const inicial = ([{ id: 1, urlImg: "imagesJuegos/alan.jpg", titulo: "Alan Wake 2", precio: (~~(Math.random() * 100000)), genero: "Acción" },
+/*const inicial = ([{ id: 1, urlImg: "imagesJuegos/alan.jpg", titulo: "Alan Wake 2", precio: (~~(Math.random() * 100000)), genero: "Acción" },
 { id: 2, urlImg: "imagesJuegos/brave.jpg", titulo: "Brave", precio: (~~(Math.random() * 100000)), genero: "Aventuras" },
 { id: 3, urlImg: "imagesJuegos/duty.jpeg", titulo: "Call of Duty: Black Ops II", precio: (~~(Math.random() * 100000)), genero: "Multijugador" },
 { id: 4, urlImg: "imagesJuegos/fallout.jpg", titulo: "Fallout 4 (GOTY)", precio: (~~(Math.random() * 100000)), genero: "RPG" },
@@ -16,9 +16,46 @@ const inicial = ([{ id: 1, urlImg: "imagesJuegos/alan.jpg", titulo: "Alan Wake 2
 { id: 16, urlImg: "imagesJuegos/resident6.jpeg", titulo: "Resident Evil 6", precio: (~~(Math.random() * 100000)), genero: "Horror" },
 { id: 17, urlImg: "imagesJuegos/street.jpg", titulo: "Street Fighter 6 Deluxe Edition", precio: (~~(Math.random() * 100000)), genero: "Lucha" },
 { id: 18, urlImg: "imagesJuegos/witcher.jpg", titulo: "The Witcher 3: Wild Hunt", precio: (~~(Math.random() * 100000)), genero: "RPG" }
-])
+])*/
 
-let catalogo = inicial
+var datos;
+function ajax() {
+  // De esta forma se obtiene la instancia del objeto XMLHttpRequest
+    connection = new XMLHttpRequest();
+  
+  // Preparando la funciÃ³n de respuesta
+  connection.onreadystatechange = response;
+   // Realizando la peticiÃ³n HTTP con mÃ©todo POST
+  connection.open('GET', 'ListaJuegosJson', false);
+  connection.send()
+}
+ 
+function response() {
+  if(connection.readyState == 4) {
+    datos =  JSON.parse(connection.responseText)
+    alert(connection.responseText)
+ /*  for (i = 0 ; i < datos.length ; i++){
+	     alert(datos[i]["id"] + " " + datos[i]["titulo"])  
+   } */
+   
+   
+  }
+ 
+}
+   
+ajax();
+
+
+
+alert(datos)
+
+let catalogo = datos
+
+
+
+
+
+//let catalogo = inicial
 
 let cards = document.getElementById("cards")
 
@@ -27,7 +64,7 @@ function showCard() {
     let i = 0
     catalogo.forEach(c => {
         cards.innerHTML += `<div class="card" id="card${i}">
-    <img id="imagen" src="${c.urlImg}" alt="">
+    <img id="imagen" src="images-upload/${c.imgurl}" alt="">
     <hr>
     <div class="ti">
         <p id="titulo">${c.titulo}</p>
@@ -51,7 +88,7 @@ function todosCard() {
         cards.innerHTML = ""
         catalogo.forEach(c => {
             cards.innerHTML += `<div class="card" id="card${i}">
-    <img id="imagen" src="${c.urlImg}" alt="">
+    <img id="imagen" src="images-upload/${c.imgurl}" alt="">
     <hr>
     <div class="ti">
         <p id="titulo">${c.titulo}</p>
@@ -130,7 +167,7 @@ function accionCard(a) {
         while (i < catalogo.length) {
             if (catalogo[i].genero == a) {
                 cards.innerHTML += `<div class="card" id="card${i}">
-                    <img id="imagen" src="${catalogo[i].urlImg}" alt="">
+                    <img id="imagen" src="images-upload/${catalogo[i].imgurl}" alt="">
                     <hr>
                     <div class="ti">
                     <p id="titulo">${catalogo[i].titulo}</p>
@@ -196,7 +233,7 @@ function agregarCarrito(id) {
     while (i < catalogo.length) {
         if (catalogo[i].id == id) {
             /* cardsCa.innerHTML += `<div class="cardCa" id="cardCa${id}">
-            <img id="imagen" src="${catalogo[i].urlImg}" alt="">
+            <img id="imagen" src="${catalogo[i].imgurl}" alt="">
             <div class="derecha">
                 <p id="titulo">${catalogo[i].titulo}</p>
                 <hr>
@@ -214,7 +251,7 @@ function agregarCarrito(id) {
             cardCa.setAttribute("id", `cardCa${id}`)
             const img = document.createElement("img")
             img.setAttribute("id", "imagen")
-            img.setAttribute("src", `${catalogo[i].urlImg}`)
+            img.setAttribute("src", `images-upload/${catalogo[i].imgurl}`)
             const derecha = document.createElement("div")
             derecha.classList.add("derecha")
             const parrafo1 = document.createElement("p")

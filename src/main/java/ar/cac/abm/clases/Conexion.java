@@ -113,7 +113,7 @@ public int actualizarJuego(Juego juego) throws SQLException {
 		
 	}
 	
-/*	public Usuario usuarioLog(String user , String pass) {
+	public Usuario usuarioLog(String user , String pass) {
 		
 		String sqlQ	= "Select * from usuarios" ;
 		PreparedStatement stm;
@@ -130,7 +130,7 @@ public int actualizarJuego(Juego juego) throws SQLException {
 				if (user.equals(rs.getString(2)) && pass.equals(rs.getString(3)) ) {
 					
 					
-					usuarioLog = new Usuario(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
+					usuarioLog = new Usuario(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
 					
 				}
 					
@@ -145,6 +145,20 @@ public int actualizarJuego(Juego juego) throws SQLException {
 		//System.out.println(usuarioLog.getUsuario());
 		return usuarioLog;
 				
-	}*/
+	}
+	public int agregarUsuario(Usuario usuario) throws SQLException {
+		
+		String sqlQ	= "insert into usuarios (usuario , password , email, rol) values (?,?,?,?)";
+		PreparedStatement stm  =  this.con.prepareStatement(sqlQ);
+		
+		stm.setString(1, usuario.getUser());
+		stm.setString(2, usuario.getPass());
+		stm.setString(3, usuario.getEmail());
+		stm.setString(4, usuario.getRole());
+		
+		
+		return stm.executeUpdate();
+		
+		}
 	
 }

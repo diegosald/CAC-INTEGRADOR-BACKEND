@@ -107,8 +107,8 @@ public class ActJuego extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		pw.print("<meta http-equiv='refresh' content=5;URL='juegos.jsp'>");
-		pw.println("<br><br><a href= 'juegos.jsp'>Home</a>");
+		pw.print("<meta http-equiv='refresh' content=5;URL='abmjuegos.jsp'>");
+		pw.println("<br><br><a href= 'abmjuegos.jsp'>Home</a>");
 
 	}
 
